@@ -1,0 +1,137 @@
+// Import mixins
+@import "colours.styl"
+@import "mixins.styl"
+@import "normalize.css"
+
+// Font awesome
+$fa-font-path = "../../node_modules/font-awesome-stylus/fonts"
+@import "../../node_modules/font-awesome-stylus/index.styl"
+
+// Import fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:600')
+@import url('https://fonts.googleapis.com/css?family=Lato')
+
+// Material icons
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons')
+.material-icons
+  cursor: default
+  user-select: none
+.material-icons.md-18
+  font-size: 18px
+.material-icons.md-24
+  font-size: 24px
+.material-icons.md-36
+  font-size: 36px
+.material-icons.md-48
+  font-size: 48px
+
+body, button, input
+  font-family: 'Open Sans', sans-serif;
+
+html
+  height: 100%
+
+html, body
+  margin: 0
+  padding: 0
+  background: linear-gradient(to bottom right, #50adac 0%, #53edb0 100%)
+  background-image: url("../assets/seigaiha_trans.png"), linear-gradient(to bottom right, #50adac 0%, #53edb0 100%)
+  background-attachment: fixed
+  background-repeat: repeat;
+  background-position: center center;
+
+// Play related styling
+.game-btn
+  box-sizing: border-box
+  padding: 1px 6px
+  color: rgba(71, 86, 105, 0.6)
+  background-color: #F9FAFC
+  background-image: linear-gradient(top, #f7f8fa, #dae3ed)
+
+  &:focus
+    outline: none
+
+  &:active
+    padding: 1px 4px 1px 8px
+    box-shadow: none
+    color: rgba(71, 86, 105, 0.75)
+    border: solid 1px #C0CCDA
+
+  &:hover
+    color: rgba(71, 86, 105, 0.75)
+    background: #E5E9F2
+    text-shadow: 2px 2px 2px #b3bcd6
+  box-shadow: 0 2px 6px #a5b5cb, inset 0px 2px 3px white
+  border: solid 1px #D3DCE6
+
+.container
+  margin: 0 auto
+  padding: 3rem 0
+
+.text-border
+  background-color: $g-inner
+  border: 0.35rem solid $g-border
+  padding: 1rem
+
+.inner-border
+  background-color: $g-inner2
+  border: 0.15rem solid $g-border2
+
+.centered-box
+  padding: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100%
+
+.auth-box
+  color: $chat-text;
+  display: flex
+  flex-direction: column
+  position: relative
+  padding: 0 5rem
+  font-family: 'Lato', sans-serif
+  align-items: center
+  background: linear-gradient(to top right, rgba(255, 162, 206,0.9), rgba(133,255,220,0.9))
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  border-radius: 3px
+  p
+    margin: 0
+    padding: 0
+    color: red
+  input
+    _trans(0.1s)
+    color: $chat-text
+    text-align: left
+    margin: 0.25rem 0 0
+    font-size: 1.2rem
+    &::placeholder
+      color: $g-border
+      user-select: none
+      text-align: left
+    &:focus
+      _trans(0.1s)
+      border: 2px solid $g-border2
+      box-sizing: border-box
+  button
+    padding: 0.5rem
+    margin: 1rem 0
+
+.std-button
+  color: #fff
+  background-color: #475669
+  border: none
+  &:hover
+    background-color: #59697d
+  margin: 0 1rem
+  _trans(0.2s)
+  _mat-shadows(2, 3)
+  min-width: 7rem
+  height: 3rem
+  font-size: 1.25rem
+  border-radius: 3px
+
+@media(min-width: 900px)
+  body, #app
+    height: 100%
+

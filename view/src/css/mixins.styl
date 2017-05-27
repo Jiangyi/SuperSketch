@@ -1,0 +1,44 @@
+// Material shadows mixin
+_mat-shadows(num, animNum=0)
+  unless num is defined
+    error("expected a valid number input!")
+  unless num >= 0 && num <= 5
+    error("value must be between 0-5 inclusive!")
+
+  if animNum is defined
+    unless animNum >= 0 && num <= 5
+      error("animated value must be bewteen 0-5 inclusive!")
+    if animNum == 1
+      &:hover
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px
+    else if animNum == 2
+      &:hover
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+    else if animNum == 3
+      &:hover
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+    else if animNum == 4
+      &:hover
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+    else if animNum == 5
+      &:hover
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)
+
+  if num == 1
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px
+  else if num == 2
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+  else if num == 3
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+  else if num == 4
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+  else if num == 5
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)
+
+// Transitions
+_trans(time=0.3s)
+    transition: all time cubic-bezier(.25,.8,.25,1)
+
+// Rotations
+_rotate(angle=0deg)
+  transform rotate(angle)
